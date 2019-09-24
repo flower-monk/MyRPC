@@ -29,6 +29,7 @@ class Master(val Host: String, val Port: Int) extends Actor {
         idToWorker(id) = workerInfo
         workers += workerInfo
         //"reply，你小子注册成功了，以后定期给我发送心跳"
+		//此行纯属测试。。。。。。。
         sender ! RegisteredWorker(s"akka.tcp://MaterSystem@$Host:$Port/user/Master")
       }
       println("a client connected!")

@@ -14,6 +14,7 @@ class Worker(val masterHost: String, val masterPort: Int, val memory: Int, val c
   override def preStart(): Unit = {
     master = context.actorSelection(s"akka.tcp://MaterSystem@$masterHost:$masterPort/user/Master")
     //向Master发送注册信息
+	//此行纯属测试。。。。。。。
     master ! RegisterWorker(workerId, memory, cores)
 
 
